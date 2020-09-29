@@ -7,3 +7,6 @@ npm install
 ```
 npm run serve
 ```
+
+
+This project is under construction. Integration with Firebase ongoing. 🚀
