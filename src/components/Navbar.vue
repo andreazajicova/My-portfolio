@@ -11,6 +11,17 @@
           </span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
+
+      <!-- DROPDOWN MENU --> 
+        <v-menu >
+            <template v-slot:activator="{ on, attrs }">
+            <v-btn class="light-green lighten-3 green--text" depressed v-bind="attrs" v-on="on">
+                <v-icon left>expand_more</v-icon>
+                <span>MENU</span>
+            </v-btn>
+            </template>
+        </v-menu>
+
           <v-btn text>
               <span class="green--text text-darken-3">Logout</span>
               <v-icon right class="green--text text-darken-3">exit_to_app</v-icon>
@@ -18,6 +29,15 @@
   </v-app-bar>
 
 <v-navigation-drawer v-model="drawer" app class="amber accent-2">
+    <v-layout column align-center>
+        <v-flex>
+        <!-- <v-avatar size="126" color="indigo lighten-1" class="my-5"></v-avatar> -->
+        <v-img src="../assets/desktop.jpeg">
+        </v-img>
+        </v-flex>
+        
+    </v-layout>
+    
    <v-list rounded>
        <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
            <v-list-item-icon>
