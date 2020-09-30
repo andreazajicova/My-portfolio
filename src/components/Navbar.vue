@@ -13,29 +13,58 @@
       <v-spacer></v-spacer>
 
       <!-- DROPDOWN MENU --> 
-        <v-menu >
+        <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
-            <v-btn class="light-green lighten-3 green--text" depressed v-bind="attrs" v-on="on">
-                <v-icon left>expand_more</v-icon>
-                <span>MENU</span>
-            </v-btn>
+                <v-btn 
+                    class="light-green lighten-3 green--text" depressed 
+                    v-bind="attrs" 
+                    v-on="on"
+                >MENU
+                </v-btn>
             </template>
+            <v-list>
+                <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
+                    
+                        <v-list-item-title>{{ link.text }}</v-list-item-title>
+                    
+                </v-list-item>
+            </v-list>
         </v-menu>
 
-          <v-btn text>
+        <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+                <v-btn 
+                    class="light-green lighten-3 green--text" depressed 
+                    v-bind="attrs" 
+                    v-on="on"
+                ><v-icon>exit_to_app</v-icon>LOG OUT
+                </v-btn>
+            </template>
+            <v-list>
+                <v-list-item>
+                    <v-list-item-title>
+                        <v-icon>login</v-icon>
+                    LOG IN
+                    </v-list-item-title>
+                </v-list-item>
+            </v-list>
+        </v-menu>
+
+          <!-- <v-btn text>
               <span class="green--text text-darken-3">Logout</span>
               <v-icon right class="green--text text-darken-3">exit_to_app</v-icon>
-          </v-btn>
+          </v-btn> -->
   </v-app-bar>
 
 <v-navigation-drawer v-model="drawer" app class="amber accent-2">
     <v-layout column align-center>
         <v-flex>
-        <!-- <v-avatar size="126" color="indigo lighten-1" class="my-5"></v-avatar> -->
         <v-img src="../assets/desktop.jpeg">
         </v-img>
         </v-flex>
-        
+        <v-flex class="my-3">
+            <Dialog />
+        </v-flex>
     </v-layout>
     
    <v-list rounded>
@@ -54,7 +83,12 @@
 </template>
 
 <script>
+import Dialog from './Dialog';
+
 export default {
+    components: {
+        Dialog
+    },
     data() {
         return {
             drawer: null,
