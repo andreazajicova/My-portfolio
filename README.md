@@ -1,7 +1,9 @@
 # My first-vue-app with Vuetify
 
-![robby-wave-800x600](https://user-images.githubusercontent.com/35815182/95460583-71ccc180-0975-11eb-8c14-cb2ca10cdc7f.gif)
+## Preview:
 
+
+![Screenshot 2020-10-08 at 14 41 51](https://user-images.githubusercontent.com/35815182/95460699-90cb5380-0975-11eb-9a9b-4f352039383f.png)
 
 
 
