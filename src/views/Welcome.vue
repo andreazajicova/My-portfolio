@@ -18,7 +18,7 @@
 
 <script>
 export default {
-
+  
 }
 </script>
 
@@ -26,4 +26,5 @@ export default {
 .vue-typer .custom.char.typed {
   color: #1565C0;
 }
+
 </style>
